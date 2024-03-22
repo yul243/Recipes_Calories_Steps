@@ -270,3 +270,21 @@ For the Rasso regression model, the R-squared value is close to 1, the RMSE valu
 
 ## Fairness Analysis
 
+> Group Selection and Evaluation Metrics
+
+Group X: Recipes with ten or fewer 'n_steps'
+
+Group Y: Recipes with more than 10 'n_steps'
+
+Evaluation metric: RMSE
+
+> Hypothesis
+
+Null hypothesis: that the model is fair. The RMSE of the model is almost identical for group X and group Y, and any difference is due to random probabilities.
+
+Alternative Hypothesis: The model is unfair. The RMSE of the model is higher than that of group Y for group X.
+
+> Permutation test
+
+Only the final fitted model is used to calculate the test statistics without modifying the model.
+
