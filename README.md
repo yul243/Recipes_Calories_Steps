@@ -166,7 +166,7 @@ Test statistic: mean calorie difference between recipes with complex steps(n>10)
 Significance Level (α): 0.05
 
 <iframe
-  src="assets/fig04.html"
+  src="assets/fig05.html"
   width="800"
   height="600"
   frameborder="0"
@@ -190,8 +190,83 @@ For prediction Problem we made new DataFrame.
 
 ### Problem Identification
 
+> Prediction problems
+
+It will predict the calories in the recipe, which we treat as a regression problem.
+
+> Response variables
+
+The response variable (target) is "calorie." This variable represents the energy content of a recipe and is essential information for managing dietary intake or following specific dietary plans.
+
+> Reason for selection
+
+Calories are a fundamental component of dietary assessment, influencing individuals' decisions about what and how much to consume. By accurately predicting calorie content, you can help achieve specific dietary goals, such as meal planning, diet tracking, weight management, or meeting nutrient requirements.
+
+> Select Indicator
+
+We will evaluate the regression model's performance by selecting R-squared and RMSE. R-squared indicates how well the model describes the variability of the dependent variable; the closer to 1, the better the model. This tells us how well the model describes the variability of the data. RMSE represents the difference between the model's predicted and actual values; the smaller the value, the more accurate the model's prediction. Therefore, we will evaluate the model's performance using these two metrics.
+
 ## Baseline Model
+
+> Model Description
+
+The reference model is a linear regression model.
+
+> Features of the model
+
+'total_fat': a quantitative characteristic.
+
+'sugar': a quantitative characteristic.
+
+> Encoding required
+
+If the properties are quantitative, no particular encoding is required.
+
+> Model performance
+
+R-squared (R²): 0.786
+Root Mean Squared Error (RMSE): 138.45
+
+> Evaluate the current model
+
+The R-squared value is 0.786, indicating that the model accounts for about 78.6% of the variability of the dependent variable.
+
+The RMSE value is 138.45, indicating that the average of the prediction error is approximately 138.45.
+
+The baseline model's performance is suitable, suggesting that it has significant explanatory power for calorie prediction.
+
+> Visualize model performance
+
+The graph below shows the relationship between the actual and predicted calories. The actual and predicted calories are generally consistent. Also, the red straight line is an identity line indicating when the actual and predicted values match perfectly.
+
+<iframe
+  src="assets/fig06.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Final Model
 
+> Added attributes and reasons
+
+The model included additional characteristics such as 'minutes,' 'n_steps,' and 'n_ingredients,' which are believed to help predict calories by providing important information such as recipe complexity, cooking time, and the number of ingredients used.
+
+> Selected models and hyperparameters
+
+Model: Lasso regression model
+
+Hyperparameter: We found the optimal model by adjusting the alpha value of the Lasso regression.
+
+> Final Model Performance
+
+R-squared (R²): 0.99999988
+
+RMSE: 0.102
+
+> Improve Model Performance
+
+For the Rasso regression model, the R-squared value is close to 1, the RMSE value is deficient, and the error between the actual and predicted values is tiny. This shows that the final model describes and predicts the data very well.
+
 ## Fairness Analysis
+
