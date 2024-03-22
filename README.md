@@ -82,7 +82,7 @@ This cleaned data frame is now ready for further analysis, allowing us to more e
 In the univariate analysis, I analyzed the distribution of number of `calories` and the distribution of `number of steps`.
 
 <iframe
-  src="assets/fig01.html"
+  src="./assets/fig01.html"
   width="800"
   height="600"
   frameborder="0"
